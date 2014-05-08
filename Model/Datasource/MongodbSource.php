@@ -668,7 +668,7 @@ class MongodbSource extends DboSource {
  * @return void
  * @access public
  */
-	public function group($params, Model $Model = null) {
+	public function group($params, $Model = null) {
 
 		if (!$this->isConnected() || count($params) === 0 || $Model === null) {
 			return false;
@@ -1193,7 +1193,7 @@ class MongodbSource extends DboSource {
 			$Model->recursive = $recursive;
 		}
 
-		$_associations = $Model->__associations;
+		$_associations = $Model->_associations;
 
 		if ($Model->recursive == -1) {
 			$_associations = array();
